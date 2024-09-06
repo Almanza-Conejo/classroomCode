@@ -2,36 +2,37 @@ clc;
 close all;
 clear;
 
-% Parámetros de la señal
-f = 1;                  % Frecuencia de la señal senoidal (Hz)
-Fs = 20;                % Frecuencia de muestreo (Hz)
-t_continuo = 0:0.001:2; % Vector de tiempo continuo (2 segundos con alta resolución)
-t_discreto = 0:1/Fs:2;  % Vector de tiempo discreto
+% Signal parameters
+signalFrequency = 1;               % Frequency of the sinusoidal signal (Hz)
+samplingFrequency = 20;            % Sampling frequency (Hz)
+continuousTime = 0:0.001:2;        % Continuous time vector (2 seconds with high resolution)
+discreteTime = 0:1/samplingFrequency:2; % Discrete time vector
 
-% Generación de la señal senoidal
-senal_continuo = sin(2*pi*f*t_continuo);  % Señal continua
-senal_discreta = sin(2*pi*f*t_discreto);  % Señal discreta
+% Generating the sinusoidal signal
+continuousSignal = sin(2*pi*signalFrequency*continuousTime);  % Continuous signal
+discreteSignal = sin(2*pi*signalFrequency*discreteTime);       % Discrete signal
 
-% Graficar la señal continua
+% Plotting the continuous signal
 fig1 = figure('WindowState', 'maximized');
-plot(t_continuo, senal_continuo, 'b', 'LineWidth', 4);
+plot(continuousTime, continuousSignal, 'b', 'LineWidth', 4);
 hold on;
 
-% Graficar las muestras discretas
-stem(t_discreto, senal_discreta, 'r', 'LineWidth', 3);
+% Plotting the discrete samples
+stem(discreteTime, discreteSignal, 'r', 'LineWidth', 3);
 
-% Configuración de la gráfica
-xlabel('Tiempo (s)', 'Interpreter', 'latex');
-ylabel('Amplitud', 'Interpreter', 'latex');
-title('Senal Senoidal con Envolvente Continua y Muestras Discretas', ...
+% Configuring the plot
+xlabel('Time (s)', 'Interpreter', 'latex');
+ylabel('Amplitude', 'Interpreter', 'latex');
+title('Sinusoidal Signal with Continuous Envelope and Discrete Samples', ...
     'Interpreter', 'latex');
-legend({'Senal Continua', 'Muestras Discretas'}, ...
+legend({'Continuous Signal', 'Discrete Samples'}, ...
     'Interpreter', 'latex');
 set(gca, 'FontSize', 28, ...
     'TickLabelInterpreter', 'latex');
 grid on;
 hold off;
 
+% Exporting the plot as an image
 exportgraphics(fig1, 'dcFunction.png', ...
     'BackgroundColor', 'none', ...
     'ContentType', 'image');
