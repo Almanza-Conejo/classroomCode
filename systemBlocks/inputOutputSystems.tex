@@ -1,0 +1,88 @@
+\documentclass[border = 0mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+
+\begin{document}
+    \tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=6em]
+    \tikzstyle{input} = [coordinate]
+    \tikzstyle{output} = [coordinate]
+
+    \begin{tikzpicture}[
+        name = system1,
+        auto,
+        >=latex']
+            %   --  blocks
+            \node [input, name=input] {};
+            \node [block, right=1cm of input] (system) {{$T$}};
+            \node [output, right=1cm of system] (output) {};
+
+            \node [input, name=input2_1, below=1.5cm of input] {};
+            \node [input, name=input2_2, below=1.5cm of input] {};
+            \node [input, name=input2_3, below=1.5cm of input] {};
+            \node [block, right=1cm of input2_1] (system2) {{$T$}};
+            \node [output, right=1cm of system2] (output2) {$a$};
+
+            \node [input, name=input3, below=1.5cm of input2_2] {};
+            \node [block, right=1cm of input3] (system3) {{$T$}};
+            \node [output, name=output3_1, below=1.5cm of output2] {};
+            \node [output, name=output3_2, below=1.5cm of output2] {};
+            \node [output, name=output3_3, below=1.5cm of output2] {};
+
+            \node [input, name=input4_1, below=1.5cm of input3] {};
+            \node [input, name=input4_2, below=1.5cm of input3] {};
+            \node [input, name=input4_3, below=1.5cm of input3] {};
+            \node [block, right=1cm of input4_2] (system4) {{$T$}};
+            \node [output, name=output4_1, below=1.5cm of output3_2] {};
+            \node [output, name=output4_2, below=1.5cm of output3_2] {};
+            \node [output, name=output4_3, below=1.5cm of output3_2] {};
+
+            %   --  connections
+            \draw [->] (input) -- node {$x$} (system);
+            \draw [->] (system) -- node [name=y] {$y$} (output);
+
+            %   --
+            \draw [->] ([yshift = 0.4cm]input2_1) -- 
+                        node[left=0.5cm of input2_1] {$x_1$} 
+                        ([yshift = 0.4cm]system2.west);
+            \draw [->] (input2_2) -- 
+                        node[left=0.65cm of input2_2] {$\vdots$} 
+                        (system2.west);
+            \draw [->] ([yshift = -0.4cm]input2_3) -- 
+                        node[left=0.5cm of input2_3] {$x_n$} 
+                        ([yshift = -0.4cm]system2.west);
+            \draw [->] (system2) -- node [name=y2] {$y$} (output2);
+
+            %   --
+            \draw [->] (input3) -- node {$x$} (system3);
+            \draw [->] ([yshift = 0.4cm]system3.east) -- 
+                        node[right=0.5cm of output3_1] {$y_1$} 
+                        ([yshift = 0.4cm]output3_1);
+            \draw [->] (system3.east) -- 
+                        node[right=0.5cm of output3_2] {$\vdots$} 
+                        (output3_2);
+            \draw [->] ([yshift = -0.4cm]system3.east) -- 
+                        node[right=0.5cm of output3_3] {$y_n$} 
+                        ([yshift = -0.4cm]output3_3);
+
+            %   --
+            \draw [->] ([yshift = 0.4cm]input4_1) -- 
+                        node[left=0.5cm of input4_1] {$x_1$} 
+                        ([yshift = 0.4cm]system4.west);
+            \draw [->] (input4_2) -- 
+                        node[left=0.5cm of input4_2] {$\vdots$} 
+                        (system4.west);
+            \draw [->] ([yshift = -0.4cm]input4_3) -- 
+                        node[left=0.5cm of input4_3] {$x_n$} 
+                        ([yshift = -0.4cm]system4.west);
+            \draw [->] ([yshift = 0.4cm]system4.east) -- 
+                        node[right=0.5cm of output4_1] {$y_1$} 
+                        ([yshift = 0.4cm]output4_1);
+            \draw [->] (system4.east) -- 
+                        node[right=0.5cm of output4_2] {$\vdots$} 
+                        (output4_2);
+            \draw [->] ([yshift = -0.4cm]system4.east) -- 
+                        node[right=0.5cm of output4_3] {$y_n$} 
+                        ([yshift = -0.4cm]output4_3);
+    \end{tikzpicture}
+
+\end{document}
