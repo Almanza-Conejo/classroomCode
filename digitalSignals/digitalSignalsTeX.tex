@@ -12,11 +12,22 @@
         \fin2 = 3.5;
         \ini3 = 4;
         \fin3 = 5.5;
+        \xval = 12;
+		\yval = 6;
     }
 
+% líneas guía
+\draw[help lines, gray!25]       (0, 0)  grid (\xval, \yval);
+
+%title
+%	--	title
+\node[anchor = south west,
+        font = \large] (title) at (0.35, \yval+0.75) {\texttt{Digital signals}};
+\draw[gray] (title.south west) -- (title.south east);
+
 % Ejes
-\draw[->] (0,0) -- (12,0) node[right] {$t$};
-\draw[->] (0,0) -- (0,6) node[above] {$V$};
+\draw[->] (0,0) -- (\xval,0) node[right] {$t$};
+\draw[->] (0,0) -- (0,\yval) node[above] {$V$};
 
 % Líneas horizontales para cada señal con más espacio
 \foreach \y in {0, 1.5, 2, 3.5, 4, 5.5} {
@@ -58,6 +69,20 @@
 \node at (-0.5,\ini2) {0};
 \node at (-0.5,\fin3) {1};
 \node at (-0.5,\ini3) {0};
+
+\node[%
+		anchor = south west,
+		text = gray!40,
+		fill = white,
+		align = left,
+		font = \scriptsize,
+	] (user) at (-1, -1) {\texttt{almanzaConejo}};
+
+% \node[inner sep=0pt,
+% 		fill = white,
+% 		opacity = 0.40,
+% 		anchor = north east] (ugto) at (\xval-0.1, \yval+1.25)
+%     	{\includegraphics[width = 0.2\textwidth]{escudo-linea-horizontal-png.png}};
 
 \end{tikzpicture}
 \end{document}
