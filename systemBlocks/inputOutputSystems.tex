@@ -1,6 +1,6 @@
 \documentclass[border = 0mm]{standalone}
 \usepackage{tikz}
-\usetikzlibrary{arrows,positioning}
+\usetikzlibrary{arrows,positioning,math}
 
 \begin{document}
     \tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=6em]
@@ -11,8 +11,22 @@
         name = system1,
         auto,
         >=latex']
+        \tikzmath{
+            \xval = 6;
+            \yval = -7;
+        }
+    
+    % líneas guía
+    \draw[help lines, gray!25]       (0, 0)  grid (\xval, \yval);
+    
+    %title
+    %	--	title
+    \node[anchor = south west,
+            font = \large] (title) at (0.5, -0.75) {\texttt{System blocks}};
+    \draw[gray] (title.south west) -- (title.south east);
+
             %   --  blocks
-            \node [input, name=input] {};
+            \node [input, name=input] at (1, -1.75) {};
             \node [block, right=1cm of input] (system) {{$T$}};
             \node [output, right=1cm of system] (output) {};
 
@@ -83,6 +97,21 @@
             \draw [->] ([yshift = -0.4cm]system4.east) -- 
                         node[right=0.5cm of output4_3] {$y_n$} 
                         ([yshift = -0.4cm]output4_3);
+
+    \node[%
+		anchor = south west,
+		text = gray!40,
+		fill = white,
+		align = left,
+		font = \scriptsize,
+	] (user) at (0, \yval-0.5) {\texttt{almanzaConejo}};
+
+    % \node[inner sep=0pt,
+	% 	fill = white,
+	% 	opacity = 0.40,
+	% 	anchor = north east] (ugto) at (\xval-0.1, -0.1)
+    % 	{\includegraphics[width = 0.15\textwidth]{escudo-linea-horizontal-png.png}};
+
     \end{tikzpicture}
 
 \end{document}
