@@ -1,0 +1,54 @@
+\documentclass[border = 1mm]{standalone}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\ctikzset{amplifiers/fill=cyan!20, 
+            %component text=left
+            }
+\begin{circuitikz}[scale=1, transform shape]
+
+    %   --  Summarize AO 
+    \draw (0, 0) node[left] {$v_i$} coordinate (vi)
+        to[R = $R_i$, o-] ++(right:3) coordinate (ri)
+        to ++(right:1) node[op amp, anchor = -] (sumAO) {}
+        to ++(up: 1) coordinate (rf)
+        to[R = $R_f$] (sumAO.out |- rf) to (sumAO.out)
+        to[short, -o] ++(right:1) coordinate (vout);
+
+      \draw(ri) -- ++(up:2)
+            node[midway, fill=white, scale=2, rotate=-90]
+                {\(\cdots\)}
+            coordinate(dts)
+        to[R= $R_1$, -o] (vi |- dts) node[left]{$v_1$};
+
+      \draw(ri) to ++(down:1) coordinate(rnr)
+        to[R=$R_N$, -o] (vi|-rnr) node[left]{$v_N$};
+
+      \draw(sumAO.+) to ++(down:1) coordinate (sumGND) node[ground]{};
+
+      \node[%
+        anchor = south,
+        text = gray!90,
+        %fill = white,
+        align = left,
+        font = \large,
+      ] (sumTitle) at 
+        ([xshift = -2cm, yshift = 2.5cm]sumAO.up)
+        {\texttt{Summing OA}};
+      
+      \node[%
+        anchor = south west,
+        text = gray!90,
+        %fill = white,
+        align = left,
+        font = \Large,
+      ] (sumEquation) at 
+        ([xshift = -4.5cm, yshift = -2cm]sumGND) 
+        {$v_o = -R_f \left(\frac{v_1}{R_1} 
+            + \cdots + \frac{v_i}{R_i} 
+            + \cdots \frac{v_N}{R_N}\right)$};
+
+\end{circuitikz}
+
+\end{document}
