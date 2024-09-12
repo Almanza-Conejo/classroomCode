@@ -1,0 +1,32 @@
+\documentclass[border = 1mm]{standalone}
+\usepackage{circuitikz}
+
+\ctikzset{amplifiers/fill=cyan!20, 
+            %component text=left
+            }
+
+\begin{document}
+    \begin{circuitikz}[scale=1, transform shape]
+        \draw (0, 0) node[op amp, anchor = center] (idealAO) {\texttt{AO}}
+        (idealAO.-) to[short, -o] ++(-1, 0) node[above]{$v_{i_-}$}
+        (idealAO.+) to[short, -o] ++(-1, 0) node[above]{$v_{i_+}$}
+        (idealAO.up) to[short, -o] ++(0, 1) node[above]{$+v_{cc}$}
+        (idealAO.down) to[short, -o] ++(0, -1) node[below]{$-v_{cc}$}
+        (idealAO.out) to[short, -o] ++(0.5, 0) coordinate (idealOut) node[right]{$v_{o}$};
+
+        \draw([xshift = 0.5cm, yshift = -1cm]idealAO.out) 
+            to[short, o-] ++(down:0.5) coordinate (idealGND) 
+            node[ground]{};
+        \draw[->] ([yshift = -0.2cm]idealOut) -- ([yshift = 0.7cm]idealGND);
+
+        \node[%
+            anchor = south,
+            text = gray!90,
+            %fill = white,
+            align = left,
+            font = \large,
+        ] (sumTitle) at 
+            ([yshift = 2cm]idealAO.center)
+            {\texttt{Ideal OA}};
+    \end{circuitikz}
+\end{document}
