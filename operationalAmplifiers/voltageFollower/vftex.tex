@@ -1,0 +1,38 @@
+\documentclass[border = 2mm]{standalone}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\ctikzset{amplifiers/fill=cyan!20, 
+            %component text=left
+            }
+\begin{circuitikz}[scale=1, transform shape]
+
+    \draw (0,0) node[above]{$v_i$} to[short, o-] ++(1,0)
+        node[op amp, noinv input up, anchor=+](OA){\texttt{OA1}}
+        (OA.-) -- ++(0,-1.5) coordinate(FB)
+        to[] ++(0,-2.5) node[ground]{}
+        (FB) to[] (FB -| OA.out) -- (OA.out)
+        to [short,*-o] ++(1,0) node[above]{$v_o$};
+    \node[%
+		anchor = south,
+		text = gray!90,
+		%fill = white,
+		align = left,
+		font = \large,
+    ] (inversorTitle) at 
+          ([xshift = 0cm, yshift = 0.75cm]OA.up) 
+          {\texttt{Voltage follower OA}};
+      \node[%
+      anchor = south west,
+      text = gray!90,
+      %fill = white,
+      align = left,
+      font = \Large,
+    ] (inversorEquation) at 
+          ([xshift = 1.25cm, yshift = -1.4cm]FB) 
+          {$v_o = v_i$};
+
+\end{circuitikz}
+
+\end{document}
