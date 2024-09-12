@@ -1,0 +1,42 @@
+\documentclass[border = 1mm]{standalone}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\ctikzset{amplifiers/fill=cyan!20, 
+            %component text=left
+            }
+\begin{circuitikz}[scale=1, transform shape]
+
+    %   --  non-inverting AO
+    \draw (0, 0) node[op amp, 
+        noinv input up, 
+        anchor=center,](AOinversor){\texttt{AO}}
+        (AOinversor.in up) to[short, -o] ++(-1, 0) node[above]{$v_i$}
+        (AOinversor.-) -- ++(0, -1.5) coordinate (ground2)
+        to[R=$R_1$] ++(0, -2.5) node[ground]{}
+        (ground2) to[R=$R_2$] (ground2 -| AOinversor.out) -- (AOinversor.out)
+        to [short, *-o] ([xshift = 1cm]AOinversor.out) node[above]{$v_o$}
+        ;
+    \node[%
+		anchor = south,
+		text = gray!90,
+		%fill = white,
+		align = left,
+		font = \large,
+	] (inversorTitle) at 
+        ([xshift = 0cm, yshift = 0.75cm]AOinversor.up)
+        {\texttt{Non-inverting OA}};
+    \node[%
+		anchor = south west,
+		text = gray!90,
+		%fill = white,
+		align = left,
+		font = \Large,
+	] (inversorEquation) at 
+        ([xshift = 1.25cm, yshift = -1.5cm]ground2) 
+        {$v_o = v_i \left(1 + \frac{R_2}{R_1}\right)$};
+
+\end{circuitikz}
+
+\end{document}
