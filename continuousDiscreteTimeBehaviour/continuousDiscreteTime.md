@@ -96,3 +96,4 @@ El entendimiento del tiempo continuo y discreto es esencial en diversas áreas d
 
 ## Representación gráfica
 
+<img src="https://github.com/Almanza-Conejo/classroomCode/blob/main/continuousDiscreteTimeBehaviour/code/dcFunction.svg" alt="drawing" width="2000"/>
