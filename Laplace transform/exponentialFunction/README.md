@@ -59,8 +59,6 @@ Here is a breakdown of the code:
 \end{document}
 ```
 
-# Exponential Function Visualization with LaTeX
-
 Here is a preview of the exponential function plot:
 
 <p align="center">
