@@ -40,27 +40,26 @@ Here is a breakdown of the code:
 \begin{document}
 
 \begin{tikzpicture}[scale=1.0]
-    % Axes
-    \draw[->, gray!70] (-3, 0) -- (3, 0) node[right] {$t$};  % Time axis (t)
-    \draw[->, gray!70] (0, -0.5) -- (0, 2) node[above] {$f(t)$};  % Function axis (f(t))
+    % Ejes
+    \draw[->, gray!70] (-3, 0) -- (3, 0) node[right] {$t$};  % Eje x
+    \draw[->, gray!70] (0, -0.5) -- (0, 2) node[above] {$f(t)$};  % Eje y
     
-    % Dirac delta function
-    \draw[thick, black!70] (0, 0) -- (0, 1.5);   % Vertical line for delta at x = 0
-    \filldraw[gray!90!black!50] (0, 1.5) circle (2pt);   % Point at the top of the delta
+    % Función delta de Dirac
+    \draw[thick, black!70] (0, 0) -- (0, 1.5);   % Línea vertical de la delta en x = 0
+    \filldraw[gray!90!black!50] (0, 1.5) circle (2pt);   % Punto en el extremo de la delta
 
-    % Label for delta function
-    \node at (0.5, 1.45) {$\delta(t)$};
+    % Etiquetas
+    \node[gray!85,] at (0.5, 1.45) {$\delta(t)$};
 
-    % Dot for the delta point
-    \filldraw[black!70] (0, 1.5) circle (2pt);   % Filled circle at (0, 1.5)
+    % Punto de la delta
+    \filldraw[black!70] (0, 1.5) circle (2pt);   % Círculo relleno en (0, 1.5)
 
-    % Laplace transform formula
     \node[%
-        anchor = south west,
-        align = left,
-        font = \large,
-        gray!85,
-    ] (inversorEquation) at 
+	    anchor = south west,
+	    align = left,
+	    font = \large,
+            gray!85,
+	] (inversorEquation) at 
         (-3.7, -2.5) 
         {$\mathcal{L}\left\{\delta(t-t_0)\right\} = \int\limits_{0}^{\infty}e^{-st}\delta(t-t_0)dt = e^{-s t_0}$ \\
         \hspace{1.7cm}$\delta(t-t_0) \Leftrightarrow e^{-s t_0}$ \\
@@ -69,6 +68,12 @@ Here is a breakdown of the code:
 
 \end{document}
 ```
+
+Here is a preview of the exponential function plot:
+
+<p align="center">
+  <img src="https://github.com/Almanza-Conejo/classroomCode/blob/main/Laplace%20transform/diracDeltaFunction/dirac.png-1.png" alt="Exponential Function Plot" width="500"/>
+</p>
 
 ### How to Use
 
@@ -81,4 +86,4 @@ The output will be a standalone PDF image of the Dirac delta function $\delta(t)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Almanza-Conejo/classroomCode/tree/main?tab=MIT-1-ov-file) file for details.
