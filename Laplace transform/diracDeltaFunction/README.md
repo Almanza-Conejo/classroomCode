@@ -72,7 +72,7 @@ Here is a breakdown of the code:
 Here is a preview of the exponential function plot:
 
 <p align="center">
-  <img src="https://github.com/Almanza-Conejo/classroomCode/blob/main/Laplace%20transform/diracDeltaFunction/dirac.png-1.png" alt="Exponential Function Plot" width="500"/>
+  <img src="" alt="Dirac's delta Function Plot" width="500"/>
 </p>
 
 ### How to Use
