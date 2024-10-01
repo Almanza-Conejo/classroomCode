@@ -1,7 +1,7 @@
 
-# Damped Ramp Function Visualization with LaTeX
+# Damped Ramp Function Visualization with $\LaTeX$
 
-This repository contains a LaTeX code example that visualizes a damped ramp function and its corresponding Laplace transform. The function used is of the form `t e^{-at}`, where `a` is a constant. The Laplace transform of the damped ramp function is also illustrated.
+This repository contains a $\LaTeX$ code example that visualizes a damped ramp function and its corresponding Laplace transform. The function used is of the form `t e^{-at}`, where `a` is a constant. The Laplace transform of the damped ramp function is also illustrated.
 
 ## Damped Ramp Function
 
@@ -28,7 +28,7 @@ This shows that in the Laplace domain, the damped ramp function maps to a ration
 
 ### Visualization Using TikZ
 
-The provided LaTeX code uses the `TikZ` package to visualize several instances of the damped ramp function for different values of `a`, and it plots them in different shades of gray. The graph of $t e^{-at}$ for various values of `a` (e.g., 0.2, -0.2, -0.6, -0.9) is shown, and the Laplace transform formula is displayed at the bottom of the figure.
+The provided $\LaTeX$ code uses the `TikZ` package to visualize several instances of the damped ramp function for different values of `a`, and it plots them in different shades of gray. The graph of $t e^{-at}$ for various values of `a` (e.g., 0.2, -0.2, -0.6, -0.9) is shown, and the Laplace transform formula is displayed at the bottom of the figure.
 
 Here is a breakdown of the code:
 
@@ -68,8 +68,8 @@ Here is a preview of the exponential function plot:
 ### How to Use
 
 To compile this code and view the visualization, follow these steps:
-1. Ensure you have a LaTeX distribution installed, such as [TeX Live](https://www.tug.org/texlive/) or [MiKTeX](https://miktex.org/).
-2. Use a LaTeX editor like [TeXworks](https://www.tug.org/texworks/) or an online editor like [Overleaf](https://www.overleaf.com/).
+1. Ensure you have a $\LaTeX$ distribution installed, such as [TeX Live](https://www.tug.org/texlive/) or [MiKTeX](https://miktex.org/).
+2. Use a $\LaTeX$ editor like [TeXworks](https://www.tug.org/texworks/) or an online editor like [Overleaf](https://www.overleaf.com/).
 3. Paste the code in a `.tex` file and compile it to generate the output.
 
 The output will be a standalone PDF image of the damped ramp function $t e^{-at}$ for several values of `a` and its Laplace transform formula.
