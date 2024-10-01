@@ -1,7 +1,7 @@
 
-# Dirac's Delta Function Visualization with LaTeX
+# Dirac's Delta Function Visualization with $\LaTeX$
 
-This repository contains a LaTeX code example that visualizes Dirac's delta function and its corresponding Laplace transform. The Dirac delta function, denoted as $\delta(t)$, is a key function in signal processing and control theory. This LaTeX code also shows the Laplace transform of the delta function.
+This repository contains a $\LaTeX$ code example that visualizes Dirac's delta function and its corresponding Laplace transform. The Dirac delta function, denoted as $\delta(t)$, is a key function in signal processing and control theory. This $\LaTeX$ code also shows the Laplace transform of the delta function.
 
 ## Dirac's Delta Function
 
@@ -29,7 +29,7 @@ For the non-shifted Dirac delta function, the Laplace transform simplifies to:
 
 ### Visualization Using TikZ
 
-The provided LaTeX code uses the `TikZ` package to visualize Dirac's delta function. The graph shows a vertical arrow at $t = 0$ representing the delta function, with a point at the tip to indicate the impulse at that point.
+The provided $\LaTeX$ code uses the `TikZ` package to visualize Dirac's delta function. The graph shows a vertical arrow at $t = 0$ representing the delta function, with a point at the tip to indicate the impulse at that point.
 
 Here is a breakdown of the code:
 
@@ -78,8 +78,8 @@ Here is a preview of the exponential function plot:
 ### How to Use
 
 To compile this code and view the visualization, follow these steps:
-1. Ensure you have a LaTeX distribution installed, such as [TeX Live](https://www.tug.org/texlive/) or [MiKTeX](https://miktex.org/).
-2. Use a LaTeX editor like [TeXworks](https://www.tug.org/texworks/) or an online editor like [Overleaf](https://www.overleaf.com/).
+1. Ensure you have a $\LaTeX$ distribution installed, such as [TeX Live](https://www.tug.org/texlive/) or [MiKTeX](https://miktex.org/).
+2. Use a $\LaTeX$ editor like [TeXworks](https://www.tug.org/texworks/) or an online editor like [Overleaf](https://www.overleaf.com/).
 3. Paste the code in a `.tex` file and compile it to generate the output.
 
 The output will be a standalone PDF image of the Dirac delta function $\delta(t)$ and its Laplace transform.
