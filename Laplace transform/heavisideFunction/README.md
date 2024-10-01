@@ -81,7 +81,7 @@ Here is a breakdown of the code:
 Here is a preview of the Heaviside function plot:
 
 <p align="center">
-  <img src="https://github.com/Almanza-Conejo/classroomCode/blob/main/Laplace%20transform/heavisideFunction/heaviside.png" alt="Heaviside Function Plot" width="500"/>
+  <img src="https://github.com/Almanza-Conejo/classroomCode/blob/main/Laplace%20transform/heavisideFunction/heaviside.png-1.png" alt="Heaviside Function Plot" width="500"/>
 </p>
 
 ### How to Use
