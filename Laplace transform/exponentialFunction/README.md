@@ -59,6 +59,12 @@ Here is a breakdown of the code:
 \end{document}
 ```
 
+# Exponential Function Visualization with LaTeX
+
+Here is a preview of the exponential function plot:
+
+![Exponential Function Plot](https://github.com/Almanza-Conejo/classroomCode/blob/main/Laplace%20transform/exponentialFunction/exponential.png-1.png)
+
 ### How to Use
 
 To compile this code and view the visualization, you can follow these steps:
