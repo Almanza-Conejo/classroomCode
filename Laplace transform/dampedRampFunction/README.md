@@ -62,7 +62,7 @@ Here is a breakdown of the code:
 Here is a preview of the exponential function plot:
 
 <p align="center">
-  <img src="" alt="Exponential Function Plot" width="500"/>
+  <img src="https://github.com/Almanza-Conejo/classroomCode/blob/main/Laplace%20transform/dampedRampFunction/dammedramp.png" alt="Exponential Function Plot" width="500"/>
 </p>
 
 ### How to Use
