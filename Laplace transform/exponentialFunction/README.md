@@ -63,7 +63,7 @@ Here is a breakdown of the code:
 
 Here is a preview of the exponential function plot:
 
-![Exponential Function Plot](https://github.com/Almanza-Conejo/classroomCode/blob/main/Laplace%20transform/exponentialFunction/exponential.png-1.png)
+![Exponential Function Plot]()
 
 ### How to Use
 
